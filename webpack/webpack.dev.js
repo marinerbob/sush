@@ -15,16 +15,4 @@ module.exports = merge(common, {
         open: false,
         historyApiFallback: true
     },
-    module: {
-        rules: [
-            {
-                test: /\.s[ac]ss$/i,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader'
-                ]
-            }
-        ]
-    }
 });

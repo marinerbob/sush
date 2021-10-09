@@ -1,3 +1,5 @@
+const path = require('path');
+
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
@@ -5,17 +7,27 @@ const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
+const ROOT_DIR = path.join(__dirname, '..');
+
 module.exports = merge(common, {
     mode: 'production',
     devtool: false,
     module: {
         rules: [
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.ts$/,
+                enforce: 'pre',
+                loader: 'ts-loader',
+                options: {
+                   configFile: path.resolve(ROOT_DIR, 'tsconfig.prod.json')
+                }
+            },
+            {
+                test: /\.css$/i,
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
-                    'sass-loader'
+                    'postcss-loader'
                 ]
             }
         ],
@@ -41,7 +53,7 @@ module.exports = merge(common, {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name].[fullhash].css'
+            filename: '[name].[chunkhash].css'
         })
     ]
 });

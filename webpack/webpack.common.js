@@ -10,7 +10,7 @@ const DIST_DIR = path.join(ROOT_DIR, 'dist');
 
 module.exports = {
     entry: {
-        main: path.resolve(SRC_DIR, 'index.js')
+        main: path.resolve(SRC_DIR, 'index.tsx')
     },
     output: {
         filename: '[name].[chunkhash].js',
@@ -22,6 +22,14 @@ module.exports = {
                 test: /\.tsx?$/,
                 exclude: /node_modules|fonts/,
                 loader: 'ts-loader'
+            },
+            {
+                test: /\.css$/i,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader'
+                ]
             },
             {
                 test: /\.(woff(2)?|ttf|eot|png|svg|jpg|gif|pdf|ico)$/,
@@ -37,16 +45,16 @@ module.exports = {
         })
     ],
     resolve: {
-        extensions: [".js", ".jsx"],
+        extensions: [".ts", ".tsx", ".js"],
         alias: { 
             src: SRC_DIR,
             pages: path.resolve(SRC_DIR, 'pages'),
             common: path.resolve(SRC_DIR, 'common'),
             components: path.resolve(SRC_DIR, 'components'),
-            reduxConfig: path.resolve(SRC_DIR, 'reduxConfig'),
-            shells: path.resolve(SRC_DIR, 'shells'),
+            store: path.resolve(SRC_DIR, 'store'),
+            layouts: path.resolve(SRC_DIR, 'layouts'),
             utils: path.resolve(SRC_DIR, 'utils'),
             api: path.resolve(SRC_DIR, 'api')
         },
     }
-};k
+};
