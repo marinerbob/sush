@@ -9,20 +9,20 @@
     "dev:analyze": "webpack --config ./webpack/webpack.dev.analyze.js",
     "build": "webpack --config ./webpack/webpack.prod.js",
     "build:analyze": "webpack --config ./webpack/webpack.prod.analyze.js",
-    "lint": "eslint --debug src/",
-    "lint:write": "eslint --debug src/ --fix",
-    "prettier": "prettier --write src/**/*.ts"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "lint": "eslint --cache --ext .js,.jsx,.ts,.tsx src",
+    "lint:write": "eslint --debug --ext .js,.jsx,.ts,.tsx src --fix",
+    "prettier": "prettier --write src/**/*.tsx"
   },
   "lint-staged": {
-    "*.(js|jsx)": [
+    "*.(ts|tsx)": [
       "npm run lint:write",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint:write"
+    }
   },
   "repository": {
     "type": "git",
@@ -48,6 +48,7 @@
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-jest-enzyme": "^7.1.2",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-jest": "^25.2.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
