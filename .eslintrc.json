@@ -18,8 +18,8 @@
         },
         "ecmaVersion": 2021,
         "sourceType": "module",
-        "project": "tsconfig.json",
-        "tsconfigRootDir": "."
+        "files": ["*.ts", "*.tsx"],
+        "project": ["./tsconfig.json"]
     },
     "plugins": [
         "react",

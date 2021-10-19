@@ -11,8 +11,5 @@
         "typescriptreact",
         "typescript",
     ],
-    "eslint.workingDirectories": [ 
-        "./src"
-    ],
     "json.maxItemsComputed": 10000
 }
