@@ -1,11 +1,14 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es6": true,
+        "node": true
     },
     "extends": [
         "plugin:react/recommended",
         "airbnb",
+        "airbnb-typescript",
+        "plugin:sonarjs/recommended",
         "prettier"
     ],
     "parser": "@typescript-eslint/parser",
@@ -22,10 +25,16 @@
         "react",
         "react-hooks",
         "@typescript-eslint",
+        "sonarjs",
         "prettier"
     ],
     "rules": {
         "no-use-before-define": "off",
+        "import/no-extraneous-dependencies": [
+            "error", {
+            "devDependencies": true
+            }
+        ],
         "import/prefer-default-export": "off",
         "import/extensions": [
             "error",
@@ -50,7 +59,10 @@
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "prettier/prettier": [
-            "error"
+            "error",
+            {
+                "endOfLine": "auto"
+            }
         ]
     },
     "settings": {

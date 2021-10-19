@@ -11,4 +11,5 @@
         "typescriptreact",
         "typescript",
     ],
+    "json.maxItemsComputed": 10000
 }

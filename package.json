@@ -11,18 +11,8 @@
     "build:analyze": "webpack --config ./webpack/webpack.prod.analyze.js",
     "lint": "eslint --cache --ext .js,.jsx,.ts,.tsx src",
     "lint:write": "eslint --debug --ext .js,.jsx,.ts,.tsx src --fix",
-    "prettier": "prettier --write src/**/*.tsx"
-  },
-  "lint-staged": {
-    "*.(ts|tsx)": [
-      "npm run lint:write",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint:write"
-    }
+    "prettier": "prettier --write src/**/*.tsx",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
