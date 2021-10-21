@@ -1,9 +1,20 @@
+/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
-  roots: ['<rootDir>/src'],
-  testMatch: ['**/__tests__/**/*.+(ts|tsx|js)', '**/?(*.)+(spec|test).+(ts|tsx|js)'],
+  preset: 'ts-jest',
+  testEnvironment: 'node',
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
   },
+  globals: {
+    'ts-jest': {
+      tsconfig: '<rootDir>/tsconfig.json',
+      importHelpers: true,
+    },
+  },
   snapshotSerializers: ['enzyme-to-json/serializer'],
-  setupFilesAfterEnv: ['<rootDir>/src/setupEnzyme.ts'],
+  setupFilesAfterEnv: ['<rootDir>/jest.enzyme.js'],
+  collectCoverage: true,
+  cacheDirectory: '<rootDir>/.cache/unit',
+  transformIgnorePatterns: ['<rootDir>/node_modules/(?!@foo)'],
+  moduleNameMapper: { '\\.(css|less)$': '<rootDir>/assets/css/__mocks__/styleMock.js' },
 };
