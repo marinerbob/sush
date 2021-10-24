@@ -11,5 +11,6 @@
         "typescriptreact",
         "typescript",
     ],
-    "json.maxItemsComputed": 10000
+    "json.maxItemsComputed": 10000,
+    "css.validate": false
 }

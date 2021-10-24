@@ -1,9 +1,17 @@
 import React from 'react';
 
-import './styles/app.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import Main from './pages/main';
 
 export default () => (
   <>
-    <h1>Sushi PROJ</h1>
+    <Router>
+      <Switch>
+        <Route path="/">
+          <Main />
+        </Route>
+      </Switch>
+    </Router>
   </>
 );

@@ -1,3 +1,5 @@
+import { observable } from 'mobx';
+
 import { Ingredient } from './ingredient';
 
 export type Product = {
@@ -8,5 +10,18 @@ export type Product = {
 };
 
 export class ProductModel {
-  constructor();
+  @observable id: string;
+
+  @observable title: string;
+
+  @observable price: number;
+
+  @observable ingredients: Ingredient[];
+
+  constructor(product: Product) {
+    this.id = product.id;
+    this.title = product.title;
+    this.price = product.price;
+    this.ingredients = product.ingredients;
+  }
 }
