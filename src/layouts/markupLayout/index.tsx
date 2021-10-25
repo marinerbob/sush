@@ -1,8 +1,8 @@
 import React from 'react';
-import Navbar from '../../components/navbar';
-import Footer from '../../components/footer';
+import Navbar from '@sush/components/navbar';
+import Footer from '@sush/components/footer';
 
-import { LayoutProps } from '../utils/withChildren';
+import { LayoutProps } from '@sush/layouts/utils/withChildren';
 
 import './_markupLayout.css';
 

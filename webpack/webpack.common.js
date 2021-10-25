@@ -43,14 +43,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
     alias: {
-      src: SRC_DIR,
-      pages: path.resolve(SRC_DIR, 'pages'),
-      common: path.resolve(SRC_DIR, 'common'),
-      components: path.resolve(SRC_DIR, 'components'),
-      store: path.resolve(SRC_DIR, 'store'),
-      layouts: path.resolve(SRC_DIR, 'layouts'),
-      utils: path.resolve(SRC_DIR, 'utils'),
-      api: path.resolve(SRC_DIR, 'api'),
+      '@sush': SRC_DIR,
     },
   },
 };

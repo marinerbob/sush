@@ -2,14 +2,14 @@ import React from 'react';
 
 import { Switch, Route } from 'react-router-dom';
 
-import MarkupLayout from './layouts/markupLayout';
-import RouterLayout from './layouts/routerLayout';
+import MarkupLayout from '@sush/layouts/markupLayout';
+import RouterLayout from '@sush/layouts/routerLayout';
 
-import Main from './pages/main';
-import Order from './pages/order';
-import Reviews from './pages/reviews';
+import Main from '@sush/pages/main';
+import Order from '@sush/pages/order';
+import Reviews from '@sush/pages/reviews';
 
-import './styles/common.css';
+import '@sush/styles/common.css';
 
 export default () => (
   <RouterLayout>

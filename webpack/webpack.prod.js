@@ -24,7 +24,18 @@ module.exports = merge(common, {
       },
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                config: path.resolve(ROOT_DIR, 'postcss.prod.js'),
+              },
+            },
+          },
+        ],
       },
     ],
   },
