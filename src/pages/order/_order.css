@@ -1,0 +1,3 @@
+input:checked + .form-toggle {
+    @apply text-white bg-yellow-500;
+}
