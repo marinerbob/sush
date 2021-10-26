@@ -13,7 +13,8 @@
     "lint:write": "eslint --debug --ext .js,.jsx,.ts,.tsx src --fix",
     "prettier": "prettier --write src/**/*.tsx",
     "prepare": "husky install",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "npm run build && git push origin `git subtree split --prefix dist main`:gh-pages --force"
   },
   "repository": {
     "type": "git",
