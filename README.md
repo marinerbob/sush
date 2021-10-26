@@ -2,6 +2,7 @@
 
 # S U S H [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 > Ccылка на [бэк](https://github.com/eeravich/projectT-back).<br/>
+> Ccылка на [задеплоенный фронт](https://marinerbob.github.io/sush/). </br>
 
 Клиентская часть портала по доставке суши
 
@@ -42,15 +43,10 @@
 `npm i && npm run build`
 
 ### Деплой
-
-<Пока пусто. Доработать>
-
-## Версионирование
-<Доработать>
+Фронтовая часть задеплоена на github-pages через github-actions
 
 ## Тесты
 Запуск тестов на проекте осуществляется с помощью команды `npm run test`, тесты имеют следующее наименование: `<название тестируемого модуля>.spec.ts` и хранятся в совокупности с тестируемым модулем
-<Доработать>
 
 ## Стайл-гайды
 ### Коммит-политика
@@ -69,7 +65,6 @@ stylelint.config.js
 
 ## API
 Используется Spring-бэк
-<Добавить линк на сваггер>
 
 ## База данных
 Используется postgreSQL, инкапсулированный в Spring-бэке
