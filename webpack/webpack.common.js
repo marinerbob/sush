@@ -15,6 +15,7 @@ module.exports = {
   output: {
     filename: '[name].[chunkhash].js',
     path: DIST_DIR,
+    assetModuleFilename: 'images/[hash][ext][query]',
   },
   module: {
     rules: [
@@ -43,6 +44,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
     alias: {
+      '@public': path.resolve(PUBLIC_DIR, 'icons'),
       '@sush': SRC_DIR,
     },
   },
