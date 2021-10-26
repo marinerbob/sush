@@ -79,6 +79,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.5",
     "classnames": "^2.3.1",
     "downshift": "^6.1.7",
     "eslint-loader": "^4.0.2",
