@@ -7,7 +7,7 @@ import { LayoutProps } from '@sush/layouts/utils/withChildren';
 import './_markupLayout.css';
 
 const MarkupLayout = ({ children }: LayoutProps) => (
-  <div className="min-h-screen">
+  <div className="bg-gray-100 min-h-screen">
     <Navbar />
     {children}
     <Footer />

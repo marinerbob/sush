@@ -15,7 +15,7 @@ const GoodCard = ({ name, img, description, price }: GoodCardProps) => (
         <h3 className="font-bold text-lg">{name}</h3>
       </header>
       <p className="text-gray-400">{description}</p>
-      <footer className="flex justify-between items-start">
+      <footer className="w-full flex justify-between items-start">
         <span className="font-bold text-3xl">{price} Р</span>
         <button type="button" className="p-2 rounded-md bg-yellow-600 text-white">
           Заказать
