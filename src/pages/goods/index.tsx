@@ -32,6 +32,13 @@ const GoodsPage = () => {
             description="10 кусочков, 150гр."
             price={255}
           />
+          <GoodCard
+            key="Филадельфия и лосось сет"
+            name="Филадельфия и лосось сет"
+            img={mockImg}
+            description="36 кусочков, 1150гр."
+            price={1100}
+          />
         </div>
       </>
     </GoodsLayout>
