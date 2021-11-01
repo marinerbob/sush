@@ -4,11 +4,12 @@
     "jsx": "react",                                /* Specify what JSX code is generated. */
     "module": "esnext",
     "moduleResolution": "node",                              /* Specify what module code is generated. */
-    "rootDir": "./src",
+    "rootDir": ".",
     "baseUrl": ".",
     "paths": {
       "@sush/*": ["./src/*"],
       "@public/*": ["./public/icons"],
+      "@server/*": ["./server/*"]
     },
     "types": ["jest", "reflect-metadata"],                                /* Specify the root folder within your source files. */                                 /* Specify a file that bundles all outputs into one JavaScript file. If `declaration` is true, also designates a file that bundles all .d.ts output. */
     "outDir": "./dist/",                                   /* Specify an output folder for all emitted files. */
@@ -19,6 +20,11 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true                               /* Skip type checking all .d.ts files. */
   },
+  "include": [
+    "src",
+    "server",
+    "public"
+  ],
   "exclude": [
     "node_modules"
   ]
