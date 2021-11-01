@@ -1,27 +1,33 @@
-import { observable } from 'mobx';
+import { Discount, Product, ProductComponent, ProductType } from '@server/data/types';
 
-import { Ingredient } from './ingredient';
-
-export type Product = {
+export default class ProductModel implements Product {
   id: string;
-  title: string;
-  ingredients: Ingredient[];
+
+  name: string;
+
+  description?: string;
+
+  components?: ProductComponent[];
+
+  portion: number;
+
+  weight: number;
+
+  discount?: Discount;
+
   price: number;
-};
 
-export class ProductModel {
-  @observable id: string;
-
-  @observable title: string;
-
-  @observable price: number;
-
-  @observable ingredients: Ingredient[];
+  type: ProductType;
 
   constructor(product: Product) {
     this.id = product.id;
-    this.title = product.title;
+    this.name = product.name;
+    this.description = product.description;
+    this.components = product.components;
+    this.portion = product.portion;
+    this.weight = product.weight;
+    this.discount = product.discount;
     this.price = product.price;
-    this.ingredients = product.ingredients;
+    this.type = product.type;
   }
 }
